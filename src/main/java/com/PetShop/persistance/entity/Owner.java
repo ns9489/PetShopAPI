@@ -2,74 +2,87 @@ package com.PetShop.persistance.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 public class Owner {
     @Entity
-    @Table(name = "nombres")
     public class owner {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Integer id;
-        @Column(name = "Nombre del propietario")
-        private String name;
+        private Integer ID;
+
+        @Column(name = "Nombres")
+        private String ownerFirstName;
 
         @Column(name = "Apellidos")
-        private String Apellidos;
+        private String OwnerLastName;
 
-        @Column(name = "Correo electronico")
-        private String correoElectronico;
-
-        @Column(name = "Direccion")
-        private String Direccion;
+        @Column(name = "Correo Electronico")
+        private String OwnerEmail;
 
         @Column(name = "telefono")
-        private String telefono;
+        private String OwnerPhoneNumber;
 
-        public Integer getId() {
-            return id;
+        @Column(name = "Direccion")
+        private String OwnerAddress;
+
+        @OneToMany(mappedBy = "owner")
+        private List<Pet> pets;
+
+        public Integer getID() {
+            return ID;
         }
 
-        public void setId(Integer id) {
-            this.id = id;
+        public void setID(Integer ID) {
+            this.ID = ID;
         }
 
-        public String getName() {
-            return name;
+        public String getOwnerFirstName() {
+            return ownerFirstName;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setOwnerFirstName(String ownerFirstName) {
+            this.ownerFirstName = ownerFirstName;
         }
 
-        public String getApellidos() {
-            return Apellidos;
+        public String getOwnerLastName() {
+            return OwnerLastName;
         }
 
-        public void setApellidos(String apellidos) {
-            Apellidos = apellidos;
+        public void setOwnerLastName(String ownerLastName) {
+            OwnerLastName = ownerLastName;
         }
 
-        public String getCorreoElectronico() {
-            return correoElectronico;
+        public String getOwnerEmail() {
+            return OwnerEmail;
         }
 
-        public void setCorreoElectronico(String correoElectronico) {
-            this.correoElectronico = correoElectronico;
+        public void setOwnerEmail(String ownerEmail) {
+            OwnerEmail = ownerEmail;
         }
 
-        public String getDireccion() {
-            return Direccion;
+        public String getOwnerPhoneNumber() {
+            return OwnerPhoneNumber;
         }
 
-        public void setDireccion(String direccion) {
-            Direccion = direccion;
+        public void setOwnerPhoneNumber(String ownerPhoneNumber) {
+            OwnerPhoneNumber = ownerPhoneNumber;
         }
 
-        public String getTelefono() {
-            return telefono;
+        public String getOwnerAddress() {
+            return OwnerAddress;
         }
 
-        public void setTelefono(String telefono) {
-            this.telefono = telefono;
+        public void setOwnerAddress(String ownerAddress) {
+            OwnerAddress = ownerAddress;
+        }
+
+        public List<Pet> getPets() {
+            return pets;
+        }
+
+        public void setPets(List<Pet> pets) {
+            this.pets = pets;
         }
     }
 }

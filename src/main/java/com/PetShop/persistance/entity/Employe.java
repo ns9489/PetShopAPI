@@ -6,41 +6,54 @@ public class Employe {
 
 
     @Entity
-    @Table(name = "Propietarios")
+    @Table(name = "Empleados")
 
     public class employe {
 
         @GeneratedValue(strategy = GenerationType.IDENTITY)
 
         @Column(name = "Nombre")
-        private String Nombre;
+        private String employeeFirstName;
 
         @Column(name = "Apellido")
-        private String Apellido;
+        private String getEmployeeLastName;
+
+        @Column(name = "telefono")
+        private String employeePhone;
 
         @Column(name = "email")
-        private String email;
+        private String employeePhoneEmail;
 
-        @Column(name = "Citas")
-        private String Citas;
+        public String getEmployeeFirstName() {
+            return employeeFirstName;
+        }
 
-        @Column(name = "Productos")
-        private String Productos;
+        public void setEmployeeFirstName(String employeeFirstName) {
+            this.employeeFirstName = employeeFirstName;
+        }
 
-        @Column(name = "Proveedores")
-        private String Proveedores;
+        public String getGetEmployeeLastName() {
+            return getEmployeeLastName;
+        }
 
-        @Column(name = "Factura")
-        private String Factura;
+        public void setGetEmployeeLastName(String getEmployeeLastName) {
+            this.getEmployeeLastName = getEmployeeLastName;
+        }
 
-        @Column(name = "Historia medica")
-        private String HistoriaMedica;
+        public String getEmployeePhone() {
+            return employeePhone;
+        }
 
-        @Column(name = "Veterinario")
-        private String Veterinario;
+        public void setEmployeePhone(String employeePhone) {
+            this.employeePhone = employeePhone;
+        }
 
-        @Column(name = "Cargo")
-        private String Cargo;
+        public String getEmployeePhoneEmail() {
+            return employeePhoneEmail;
+        }
 
+        public void setEmployeePhoneEmail(String employeePhoneEmail) {
+            this.employeePhoneEmail = employeePhoneEmail;
+        }
     }
 }
