@@ -2,13 +2,10 @@ package com.PetShop.persistance.entity;
 
 import jakarta.persistence.*;
 
-public class Employe {
-
-
     @Entity
     @Table(name = "Empleados")
 
-    public class employe {
+    public class Employe {
 
         @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -56,4 +53,4 @@ public class Employe {
             this.employeePhoneEmail = employeePhoneEmail;
         }
     }
-}
+

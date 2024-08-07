@@ -2,27 +2,37 @@ package com.PetShop.persistance.entity;
 
 import jakarta.persistence.*;
 
-public class Product {
+
     @Entity
     @Table(name = "product")
-    public class product {
+    public class Product {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Integer productID;
+        private Integer ID;
+
 
         @ManyToOne
         @JoinColumn(name = "supplierID")
         private String supplier;
-        private String productName;
+
+        @Column ( name = "nombre")
+        private String  productName;
+
+        @Column ( name = "categoria")
         private String category;
+
+        @Column ( name = "Marca")
         private String brand;
 
-        public Integer getProductID() {
-            return productID;
+        @Column ( name = "Precio")
+        private  String price;
+
+        public Integer getID() {
+            return ID;
         }
 
-        public void setProductID(Integer productID) {
-            this.productID = productID;
+        public void setID(Integer ID) {
+            this.ID = ID;
         }
 
         public String getSupplier() {
@@ -56,5 +66,12 @@ public class Product {
         public void setBrand(String brand) {
             this.brand = brand;
         }
+
+        public String getPrice() {
+            return price;
+        }
+
+        public void setPrice(String price) {
+            this.price = price;
+        }
     }
-}

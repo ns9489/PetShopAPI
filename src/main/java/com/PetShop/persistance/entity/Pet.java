@@ -1,66 +1,83 @@
 package com.PetShop.persistance.entity;
 
 import jakarta.persistence.*;
+import java.util.List;
 
+@Entity
+@Table(name = "pet")
 public class Pet {
-   @Entity
-   @Table(name = "mascotas")
-    public class pet {
-       @Id
-       @GeneratedValue(strategy = GenerationType.IDENTITY)
-       private Integer id;
 
-       @Column(name = "nombre")
-       private String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "petID")
+    private Integer id;
 
-      @Column(name = "especies")
-       private  String especies;
+    @Column(name = "namePet")
+    private String name;
 
-      @Column(name = "edad")
-      private int age;
+    @Column(name = "species")
+    private String species;
 
-      @Column(name = "genero")
-      private String gander;
+    @Column(name = "age")
+    private int age;
 
-      public String getName() {
-         return name;
-      }
+    @Column(name = "gender")
+    private String gender;
 
-      public void setName(String name) {
-         this.name = name;
-      }
+    @ManyToMany
+    @JoinTable(
+            name = "Pet_Veterinarian",
+            joinColumns = @JoinColumn(name = "petID"),
+            inverseJoinColumns = @JoinColumn(name = "veterinarianID")
+    )
+    private List<Veterinarian> veterinarians;
 
-      public Integer getId() {
-         return id;
-      }
+    // Getters y Setters
+    public Integer getId() {
+        return id;
+    }
 
-      public void setId(Integer id) {
-         this.id = id;
-      }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-      public String getEspecies() {
-         return especies;
-      }
+    public String getName() {
+        return name;
+    }
 
-      public void setEspecies(String especies) {
-         this.especies = especies;
-      }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-      public int getAge() {
-         return age;
-      }
+    public String getSpecies() {
+        return species;
+    }
 
-      public void setAge(int age) {
-         this.age = age;
-      }
+    public void setSpecies(String species) {
+        this.species = species;
+    }
 
-      public String getGander() {
-         return gander;
-      }
+    public int getAge() {
+        return age;
+    }
 
-      public void setGander(String gander) {
-         this.gander = gander;
-      }
-   }
+    public void setAge(int age) {
+        this.age = age;
+    }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public List<Veterinarian> getVeterinarians() {
+        return veterinarians;
+    }
+
+    public void setVeterinarians(List<Veterinarian> veterinarians) {
+        this.veterinarians = veterinarians;
+    }
 }

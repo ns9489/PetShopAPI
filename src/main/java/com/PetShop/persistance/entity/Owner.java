@@ -1,12 +1,11 @@
 package com.PetShop.persistance.entity;
 
 import jakarta.persistence.*;
-
 import java.util.List;
 
-public class Owner {
+
     @Entity
-    public class owner {
+    public class Owner {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer ID;
@@ -85,4 +84,3 @@ public class Owner {
             this.pets = pets;
         }
     }
-}
