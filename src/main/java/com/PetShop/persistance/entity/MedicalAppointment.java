@@ -26,9 +26,6 @@ public class MedicalAppointment {
     private Veterinarian veterinarian;
 
     @OneToMany(mappedBy = "appointment")
-    private List<AppointmentDetail> appointmentDetails;
-
-    @OneToMany(mappedBy = "appointment")
     private List<Invoice> invoices;
 
     // Getters y Setters

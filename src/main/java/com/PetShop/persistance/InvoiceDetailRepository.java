@@ -1,26 +1,29 @@
-package com.PetShop.persistance;
+package com.PetShop.persistence;
 
-import com.PetShop.persistance.crud.InvoiceCrudRepository;
-import com.PetShop.persistance.entity.Invoice;
-import com.PetShop.persistance.entity.InvoiceDetail;
-import com.PetShop.persistance.entity.Owner;
+import com.PetShop.persistence.crud.InvoiceDetailCrudRepository;
+import com.PetShop.persistence.entity.InvoiceDetail;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class InvoiceDetailRepository {
-    private InvoiceDetailRepository invoiceDetailRepository;
+    private InvoiceDetailCrudRepository invoiceDetailCrudRepository;
 
-    public List<InvoiceDetail> getAll(){
-        return (List<Owner>) invoiceDetailRepository.findAll();
+    public List<InvoiceDetail> getAll() {
+        return (List<invoiceDetail>) invoiceDetailCrudRepository.findAll();
     }
-    public Optional<InvoiceDetail> getInvoiceDetailByID(int id){
-        return invoiceDetailRepository.findById(id);
+
+    public Optional<invoiceDetail> getInvoiceDetailByID(int id){
+        return invoiceDetailCrudRepository.findById(id);
     }
-    public InvoiceDetail save (InvoiceDetail invoiceDetail){
-        return invoiceDetailRepository.save( invoiceDetail);
+
+    public InvoiceDetail save(InvoiceDetail invoiceDetail){
+        return invoiceDetailCrudRepository.save(invoiceDetail);
     }
-    public void delete (int id){
-        invoiceDetailRepository.deleteById(id);
+
+    public void delete(int id){
+        invoiceDetailCrudRepository.deleteById(id);
     }
 }

@@ -16,7 +16,7 @@ public class Pet {
     private String name;
 
     @Column(name = "species")
-    private String species;
+    private String Species;
 
     @Column(name = "age")
     private int age;
@@ -50,11 +50,11 @@ public class Pet {
     }
 
     public String getSpecies() {
-        return species;
+        return Species;
     }
 
     public void setSpecies(String species) {
-        this.species = species;
+        this.Species = species;
     }
 
     public int getAge() {

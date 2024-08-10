@@ -4,10 +4,12 @@ import com.PetShop.persistance.crud.PetCrudRepository;
 import com.PetShop.persistance.crud.ProductCrudRepository;
 import com.PetShop.persistance.entity.Owner;
 import com.PetShop.persistance.entity.Product;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class ProductRepository {
 
     private ProductCrudRepository ProductCrudRepository;

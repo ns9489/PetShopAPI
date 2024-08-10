@@ -2,10 +2,12 @@ package com.PetShop.persistance;
 
 import com.PetShop.persistance.crud.EmployeCrudRepository;
 import com.PetShop.persistance.entity.Employe;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class EmployeRepository {
     private EmployeCrudRepository employeCrudRepository;
 
