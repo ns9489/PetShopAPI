@@ -1,8 +1,6 @@
 package com.PetShop.persistance;
 
-import com.PetShop.persistance.crud.PetCrudRepository;
 import com.PetShop.persistance.crud.ProductCrudRepository;
-import com.PetShop.persistance.entity.Owner;
 import com.PetShop.persistance.entity.Product;
 import org.springframework.stereotype.Repository;
 
@@ -26,5 +24,12 @@ public class ProductRepository {
     }
     public void delete (int id){
         ProductCrudRepository.deleteById(id);
+    }
+
+    public boolean existsProduct(int id){
+        return ProductCrudRepository.existsById(id);
+    }
+    public long countAll(){
+        return ProductCrudRepository.count();
     }
 }

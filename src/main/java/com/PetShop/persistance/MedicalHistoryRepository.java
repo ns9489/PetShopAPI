@@ -1,9 +1,7 @@
 package com.PetShop.persistance;
 
 import com.PetShop.persistance.crud.MedicalHistoryCrudRepository;
-import com.PetShop.persistance.entity.InvoiceDetail;
 import com.PetShop.persistance.entity.MedicalHistory;
-import com.PetShop.persistance.entity.Owner;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -27,5 +25,11 @@ public class MedicalHistoryRepository {
         medicalHistoryCrudRepository.deleteById(id);
     }
 
+    public boolean existsMedicalHistory(int id){
+        return medicalHistoryCrudRepository.existsById(id);
+    }
+    public long countAll(){
+        return medicalHistoryCrudRepository.count();
+    }
 
 }

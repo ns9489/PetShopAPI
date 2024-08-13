@@ -10,19 +10,27 @@ import java.util.Optional;
 
 @Repository
 public class SuppliersRepository {
-    private SuppliersCrudRepository SuppliersCrudRepository;
+    private SuppliersCrudRepository suppliersCrudRepository;
 
     public List<Suppliers> getAll() {
-    return (List<Suppliers>) SuppliersCrudRepository.findAll();
+    return (List<Suppliers>) suppliersCrudRepository.findAll();
  }
 
     public Optional<Suppliers> getSuppliersByID(int id){
-        return SuppliersCrudRepository.findById(id);
+        return suppliersCrudRepository.findById(id);
     }
     public Suppliers save (Suppliers suppliers){
-        return SuppliersCrudRepository.save(suppliers);
+        return suppliersCrudRepository.save(suppliers);
     }
     public void delete (int id){
-        SuppliersCrudRepository.deleteById(id);
+        suppliersCrudRepository.deleteById(id);
     }
+
+    public boolean existsProduct(int id){
+        return suppliersCrudRepository.existsById(id);
+    }
+    public long countAll(){
+        return suppliersCrudRepository.count();
+    }
+
 }

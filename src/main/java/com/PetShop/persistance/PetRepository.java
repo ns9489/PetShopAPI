@@ -16,9 +16,9 @@ public class PetRepository {
         return (List<Pet>) petCrudRepository.findAll();
     }
 
-    /*public  List<Pet> getBySpecies(String species){
+    public  List<Pet> getBySpecies(String species){
         return petCrudRepository.findBySpeciesOrderByNameAsc(species);
-    }*/
+    }
 
     public Optional<Pet> getPetById(Integer id) {
         return petCrudRepository.findById(id);

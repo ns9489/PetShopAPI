@@ -11,19 +11,27 @@ import java.util.Optional;
 
 @Repository
 public class OwnerRepository {
-    private OwnerCrudRepository OwnerCrudRepository;
+    private OwnerCrudRepository ownerCrudRepository;
 
     public List<Owner> getAll(){
-        return (List<Owner>) OwnerCrudRepository.findAll();
+        return (List<Owner>) ownerCrudRepository.findAll();
     }
 
     public Optional<Owner> getOwnerByID(int id){
-        return OwnerCrudRepository.findById(id);
+        return ownerCrudRepository.findById(id);
     }
     public Owner save (Owner owner){
-        return OwnerCrudRepository.save(owner);
+        return ownerCrudRepository.save(owner);
     }
     public void delete (int id){
-        OwnerCrudRepository.deleteById(id);
+        ownerCrudRepository.deleteById(id);
     }
+
+    public boolean existsOwner(int id){
+        return ownerCrudRepository.existsById(id);
+    }
+    public long countAll(){
+        return ownerCrudRepository.count();
+    }
+
 }

@@ -1,29 +1,31 @@
-package com.PetShop.persistence;
+package com.PetShop.persistance;
 
-import com.PetShop.persistence.crud.InvoiceDetailCrudRepository;
-import com.PetShop.persistence.entity.InvoiceDetail;
-import org.springframework.stereotype.Repository;
+import com.PetShop.persistance.crud.InvoiceDetailCrudRepository;
+import com.PetShop.persistance.entity.InvoiceDetail;
 
 import java.util.List;
 import java.util.Optional;
 
-@Repository
 public class InvoiceDetailRepository {
     private InvoiceDetailCrudRepository invoiceDetailCrudRepository;
 
-    public List<InvoiceDetail> getAll() {
-        return (List<invoiceDetail>) invoiceDetailCrudRepository.findAll();
+    public List<InvoiceDetail> getAll(){
+        return (List<InvoiceDetail>) invoiceDetailCrudRepository.findAll();
     }
-
-    public Optional<invoiceDetail> getInvoiceDetailByID(int id){
-        return invoiceDetailCrudRepository.findById(id);
+    public Optional<InvoiceDetail> getInvoiceDetailById(int id){
+        return invoiceDetailCrudRepository.findById(id)
     }
-
-    public InvoiceDetail save(InvoiceDetail invoiceDetail){
-        return invoiceDetailCrudRepository.save(invoiceDetail);
+    public InvoiceDetail save (InvoiceDetail invoiceDetail) {
+        return invoiceDetailCrudRepository.save(invoiceDetail)
     }
-
-    public void delete(int id){
+    public void delete (int id){
         invoiceDetailCrudRepository.deleteById(id);
     }
+    public boolean existsInvoiceDetail(int id){
+        return invoiceDetailCrudRepository.existsById(id);
+    }
+    public long countAll(){
+        return invoiceDetailCrudRepository.count();
+    }
 }
+

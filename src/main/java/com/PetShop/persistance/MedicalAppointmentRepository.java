@@ -26,4 +26,6 @@ public class MedicalAppointmentRepository {
     public void delete (int id){
         medicalAppointmentCrudRepository.deleteById(id);
     }
+
+
 }
