@@ -12,20 +12,25 @@ public class InvoiceDetailRepository {
     public List<InvoiceDetail> getAll(){
         return (List<InvoiceDetail>) invoiceDetailCrudRepository.findAll();
     }
+
     public Optional<InvoiceDetail> getInvoiceDetailById(int id){
-        return invoiceDetailCrudRepository.findById(id)
+        return invoiceDetailCrudRepository.findById(id);
     }
+
     public InvoiceDetail save (InvoiceDetail invoiceDetail) {
-        return invoiceDetailCrudRepository.save(invoiceDetail)
+        return invoiceDetailCrudRepository.save(invoiceDetail);
+        }
+
+        public void delete ( int id){
+            invoiceDetailCrudRepository.deleteById(id);
+        }
+
+        public boolean existsInvoiceDetail ( int id){
+            return invoiceDetailCrudRepository.existsById(id);
+        }
+
+        public long countAll () {
+            return invoiceDetailCrudRepository.count();
+        }
     }
-    public void delete (int id){
-        invoiceDetailCrudRepository.deleteById(id);
-    }
-    public boolean existsInvoiceDetail(int id){
-        return invoiceDetailCrudRepository.existsById(id);
-    }
-    public long countAll(){
-        return invoiceDetailCrudRepository.count();
-    }
-}
 
